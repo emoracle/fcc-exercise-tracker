@@ -47,7 +47,7 @@ app.post('/api/exercise/new-user', (req, res) => {
   person.save((error, data) => {
     if (error) {
       if (error.code === 11000) {
-        res.send('Unique name validation error');
+        res.send('Username is already taken');
       } else {
         res.send('Error occurred while saving user' + error);
       }
